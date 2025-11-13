@@ -21,6 +21,7 @@ bun dev
 ![Demo Screenshot](public/demo1.png)
 ![Demo Screenshot](public/demo2.png)
 ![Demo Screenshot](public/demo3.png)
+![Demo Screenshot](public/demo4.png)
 ![Demo Video](public/demovideo1.png)
 
 
