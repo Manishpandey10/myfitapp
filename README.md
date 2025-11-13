@@ -15,6 +15,8 @@ bun dev
 ```
 ## Image generation is not working as of righnow working on it to improve it...
 
+ ## Live Link Hosted using vercel 
+![Live-Link](https://myfitapp-iota.vercel.app/)
 ## Screenshots and videos :
 
 
