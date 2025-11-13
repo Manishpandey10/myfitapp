@@ -13,7 +13,10 @@ pnpm dev
 # or
 bun dev
 ```
-Screenshots and videos :
+## Image generation is not working as of righnow working on it to improve it...
+
+## Screenshots and videos :
+
 
 ![Demo Screenshot](public/demo1.png)
 ![Demo Screenshot](public/demo2.png)
