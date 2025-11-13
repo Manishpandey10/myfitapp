@@ -22,7 +22,7 @@ bun dev
 ![Demo Screenshot](public/demo2.png)
 ![Demo Screenshot](public/demo3.png)
 ![Demo Screenshot](public/demo4.png)
-![Demo Video](public/demovideo1.png)
+![Demo Video](https://drive.google.com/file/d/1xdAB9zO1tF_140bil9mnl8HW0x684kmX/view?usp=sharing)
 
 
 
