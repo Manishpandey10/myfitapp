@@ -173,9 +173,9 @@ const UserForm: React.FC<UserFormProps> = ({ onSubmit }) => {
               <SelectValue placeholder="Select your current level" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="beginner">Beginner</SelectItem>
-              <SelectItem value="intermediate">Intermediate</SelectItem>
-              <SelectItem value="advanced">Advanced</SelectItem>
+              <SelectItem value="beginner">Beginner (Workout 1-3 days a week) </SelectItem>
+              <SelectItem value="intermediate">Intermediate (Workout 2-4 days a week) </SelectItem>
+              <SelectItem value="advanced">Advanced (Workout 3-5 days a week) </SelectItem>
             </SelectContent>
           </Select>
         </div>
