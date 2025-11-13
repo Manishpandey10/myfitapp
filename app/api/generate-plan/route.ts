@@ -23,7 +23,7 @@ Stress Level: ${stress}
 Please create a customized weekly fitness and diet plan for this individual. Include sections for Summary, Workout Plan, Diet Plan, Tips, and Motivation.
     `;
 
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash-lite' });
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const plan = response.text();
