@@ -1,7 +1,7 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
-
+## I have used Google gemini AI api keys free tier fir this project 
 First, run the development server:
 
 ```bash
@@ -14,7 +14,8 @@ pnpm dev
 bun dev
 ```
 ## Image generation is not working as of righnow working on it to improve it...
-
+## if you any kind of error regarding the generating the plan kindly change the model name to "gemini-2.0-flash-lite" if possible . in route.ts file 
+since this is free plan api and it has rate limits. 
  ## Live Link Hosted using vercel  (https://myfitapp-iota.vercel.app/)
 ## Screenshots and videos :
 
