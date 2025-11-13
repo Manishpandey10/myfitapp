@@ -13,6 +13,15 @@ pnpm dev
 # or
 bun dev
 ```
+Screenshots and videos :
+
+![Demo Screenshot](public/demo1.png)
+![Demo Screenshot](public/demo2.png)
+![Demo Screenshot](public/demo3.png)
+![Demo Video](public/demovideo1.png)
+
+
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
