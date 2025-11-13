@@ -42,7 +42,7 @@ export default function HomePage() {
 
       {loading && (
         <p className="text-center mt-4 text-blue-600 animate-pulse">
-          🧠 Generating your plan...
+         Generating your personalised plan...
         </p>
       )}
 
@@ -52,7 +52,7 @@ export default function HomePage() {
             onClick={() => router.push('/result')}
             className="px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
           >
-            ✅ View Your Plan
+           View Your Plan
           </button>
         </div>
       )}
