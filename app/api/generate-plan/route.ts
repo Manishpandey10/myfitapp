@@ -77,24 +77,44 @@ Constraints:
 Generate the JSON now.
     `;
 
-    // call model once (no retries)
+    // single model call (no retries)
     const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash-lite' });
     const result = await model.generateContent(prompt);
     const response = await result.response;
 
-    // extract text safely
+    // extract text safely — cast response to any for runtime fallbacks
     let rawText = '';
     try {
-      if (response && typeof response.text === 'function') {
-        rawText = await response.text();
+      const respAny = response as any;
+
+      if (response && typeof (response as any).text === 'function') {
+        // preferred: SDK exposes .text()
+        rawText = await (response as any).text();
       } else if (typeof response === 'string') {
         rawText = response;
-      } else if (response?.outputText) {
-        rawText = response.outputText;
+      } else if (respAny?.outputText && typeof respAny.outputText === 'string') {
+        // some SDK shapes might provide outputText — treat as fallback
+        rawText = respAny.outputText;
+      } else if (respAny?.output && Array.isArray(respAny.output)) {
+        // attempt to collect textual content if present
+        const joined = respAny.output
+          .map((o: any) => {
+            if (typeof o === 'string') return o;
+            if (o?.content && Array.isArray(o.content)) {
+              return o.content.map((c: any) => c?.text || '').join('\n');
+            }
+            if (o?.text) return o.text;
+            return '';
+          })
+          .filter(Boolean)
+          .join('\n\n');
+        if (joined) rawText = joined;
       } else {
+        // last resort: stringify entire response
         rawText = JSON.stringify(response);
       }
-      rawText = normalizeText(rawText);
+
+      rawText = normalizeText(String(rawText));
     } catch (e: any) {
       return NextResponse.json({ error: 'Failed to read model response', detail: String(e) }, { status: 502 });
     }
