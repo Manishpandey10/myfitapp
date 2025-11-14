@@ -78,17 +78,17 @@ Generate the JSON now.
     `;
 
     // single model call (no retries)
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash-lite' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
     const result = await model.generateContent(prompt);
     const response = await result.response;
 
-    // extract text safely — cast response to any for runtime fallbacks
+    
     let rawText = '';
     try {
       const respAny = response as any;
 
       if (response && typeof (response as any).text === 'function') {
-        // preferred: SDK exposes .text()
+        
         rawText = await (response as any).text();
       } else if (typeof response === 'string') {
         rawText = response;
@@ -96,7 +96,7 @@ Generate the JSON now.
         // some SDK shapes might provide outputText — treat as fallback
         rawText = respAny.outputText;
       } else if (respAny?.output && Array.isArray(respAny.output)) {
-        // attempt to collect textual content if present
+        
         const joined = respAny.output
           .map((o: any) => {
             if (typeof o === 'string') return o;
@@ -110,7 +110,7 @@ Generate the JSON now.
           .join('\n\n');
         if (joined) rawText = joined;
       } else {
-        // last resort: stringify entire response
+        
         rawText = JSON.stringify(response);
       }
 
