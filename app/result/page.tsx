@@ -203,7 +203,7 @@ export default function ResultPage() {
         <div className="flex justify-between gap-4">
           <button className="px-4 py-2 rounded-md border" onClick={() => router.push('/')}>Back</button>
           <div className="flex gap-2">
-            <button
+            {/* <button
               className="px-4 py-2 rounded-md bg-indigo-600 text-white"
               onClick={() => {
                 try {
@@ -215,7 +215,7 @@ export default function ResultPage() {
               }}
             >
               Copy JSON
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
