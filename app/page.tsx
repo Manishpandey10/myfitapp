@@ -37,8 +37,8 @@ export default function HomePage() {
       }
 
       // Only set plan if plan exists
-      if (result?.plan) {
-        setPlan(result.plan);
+      if (result?.planRaw) {
+        setPlan(result.planRaw);
         setReadyToView(true);
         setError(null);
       } else {
