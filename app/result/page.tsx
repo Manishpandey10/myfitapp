@@ -217,6 +217,21 @@ export default function ResultPage() {
               Copy JSON
             </button> */}
           </div>
+          <div className="flex gap-2">
+            {/* <button
+              className="px-4 py-2 rounded-md bg-indigo-600 text-white"
+              onClick={() => {
+                try {
+                  navigator.clipboard?.writeText(JSON.stringify(planObj, null, 2));
+                  alert('Plan JSON copied to clipboard');
+                } catch {
+                  alert('Copy failed');
+                }
+              }}
+            >
+              Copy JSON
+            </button> */}
+          </div>
         </div>
       </div>
     </main>
